@@ -12,8 +12,8 @@
   <select ng-options="gender for gender in genders" ng-model="selectedG" ng-init="selectedG = true"></select>
   <p>Giá: {{price}}VND</p>
   <p>Số Lượng: <input type="text" ng-model="quantity"/> </p>
-  <p> Tiền Đồ Uống: VNĐ{{empInsurance()}}</p>
-  <p> Thuế: VNĐ{{incomeTax()}}</p>
+  <p> Tiền Đồ Uống: {{empInsurance()}}VNĐ</p>
+  <p> Thuế: {{incomeTax()}}VNĐ</p>
   <div ng-switch on="selectedD">
     <div ng-switch-when="Nau Da"></div>
     <div ng-switch-when="Den Da"></div>
@@ -24,7 +24,7 @@
     <div ng-switch-when="L"></div>
   </div>
 
-  <p>Tổng tiền phải thanh toán là: VNĐ{{totalSalary().toFixed(2)}}</p>
+  <p>Tổng tiền phải thanh toán là: {{totalSalary().toFixed(2)}}VNĐ</p>
 </div>
 <script>
   var app = angular.module('myApp', []);
